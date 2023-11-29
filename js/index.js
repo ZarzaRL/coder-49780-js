@@ -1,7 +1,5 @@
     let memoria = 0;
 
-    let test1 = [374, 375];
-
     let base = ["nombre", 0]
 
 function calcularPrecio()
