@@ -1,6 +1,14 @@
+//Variables
     let memoria = 0;
 
     let base = ["nombre", 0]
+
+
+
+
+//funciones declaradas
+
+//funcion inicial
 
 function calcularPrecio()
 { 
@@ -33,6 +41,10 @@ let producto = {
 
     return memoria;
 }
+
+
+
+//funcion sumadora
 
 function sumarJuego()
 {
@@ -69,25 +81,35 @@ let producto = {
     return memoria;
 }
 
+
+
+//funciones onclick de los botones
+
+function consultarPrecio(){
     calcularPrecio();
+}
 
-    let inicio = prompt("Si desea finalizar = 0, consultar el valor de otro juego = 1, sumar otro juego al total ingrese = 2", "");
-
-while (inicio != 0)
-{
-    if (inicio == 1)
-    {
-        calcularPrecio();
-    }else if (inicio == 2)
-    {
+function sumarPrecios(){
+    if (memoria != 0){
+    
         sumarJuego();
+    
+    }else{
+        alert("Realize la primer consulta");
+    
+        calcularPrecio();
     }
-    else
-    {
-        alert("Ingreso una opcion no valida");
-    }
-    inicio = prompt("Si desea finalizar = 0, consultar el valor de otro juego = 1, sumar otro juego al total ingrese = 2", "");
 
 }
+
+
+
+
+
+
+
+
+
+
 
 
