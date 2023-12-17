@@ -1,20 +1,17 @@
 //Variables
     let memoria = 0;
 
-    let base = ["nombre", 0]
-
-
-
-
 //funciones declaradas
 
 //funcion inicial
 
 function calcularPrecio()
-{ 
-    base[0] = prompt("Ingrese el nombre del juego", "");
+{
+    const getNombre = document.getElementById("nombreJuego").value;
 
-    base[1] = prompt("Ingrese el precio del juego en USD", "")
+    const getPrecio = document.getElementById("precioJuego").value;
+
+    let base = [getNombre, getPrecio];
 
     let precio = base[1]*374;
 
@@ -35,7 +32,9 @@ let producto = {
     preciosCimpuestos: precioFinal,
 };
 
-    alert("El juego '" + producto['nombreJuego'] + "' cuyo precio en pesos es: $" + parseFloat(producto['pesificado'].toFixed(2)) + ", y se le añaden $" + parseFloat(producto['impuestos'].toFixed(2)) + " en impuestos, dando un total de: $" + parseFloat(producto['preciosCimpuestos'].toFixed(2)));
+    document.getElementById("darRespuesta").innerHTML = "El juego '" + producto['nombreJuego'] + "' cuyo precio en pesos es: $" + parseFloat(producto['pesificado'].toFixed(2)) + ", y se le añaden $" + parseFloat(producto['impuestos'].toFixed(2)) + " en impuestos, dando un total de: $" + parseFloat(producto['preciosCimpuestos'].toFixed(2));
+
+    //alert("El juego '" + producto['nombreJuego'] + "' cuyo precio en pesos es: $" + parseFloat(producto['pesificado'].toFixed(2)) + ", y se le añaden $" + parseFloat(producto['impuestos'].toFixed(2)) + " en impuestos, dando un total de: $" + parseFloat(producto['preciosCimpuestos'].toFixed(2)));
 
     memoria = precioFinal;
 
@@ -48,9 +47,11 @@ let producto = {
 
 function sumarJuego()
 {
-    base[0] = prompt("Ingrese el nombre del juego", "");
+    const getNombre = document.getElementById("nombreJuego").value;
 
-    base[1] = prompt("Ingrese el precio del juego en USD", "")
+    const getPrecio = document.getElementById("precioJuego").value;
+
+    let base = [getNombre, getPrecio];
 
     let precio = base[1]*374;
 
@@ -74,7 +75,8 @@ let producto = {
     precioSumado: sumatoria,
 };
 
-    alert("Al valor inicial, ($"+ parseFloat(memoria.toFixed(2))+") se le suma el juego '" + producto['nombreJuego'] + "' cuyo precio en pesos es: $" + parseFloat(producto['pesificado'].toFixed(2)) + ", y se le añaden $" + parseFloat(producto['impuestos'].toFixed(2))+ " en impuestos, dando un total de: $" + parseFloat(producto['preciosCimpuestos'].toFixed(2)) + ". El total en conjunto a el/los anteriores juegos es de: $" + parseFloat(producto['precioSumado'].toFixed(2)));
+    document.getElementById("darRespuesta").innerHTML = "Al valor inicial, ($"+ parseFloat(memoria.toFixed(2))+") se le suma el juego '" + producto['nombreJuego'] + "' cuyo precio en pesos es: $" + parseFloat(producto['pesificado'].toFixed(2)) + ", y se le añaden $" + parseFloat(producto['impuestos'].toFixed(2))+ " en impuestos, dando un total de: $" + parseFloat(producto['preciosCimpuestos'].toFixed(2)) + ". El total en conjunto a el/los anteriores juegos es de: $" + parseFloat(producto['precioSumado'].toFixed(2));
+    //alert("Al valor inicial, ($"+ parseFloat(memoria.toFixed(2))+") se le suma el juego '" + producto['nombreJuego'] + "' cuyo precio en pesos es: $" + parseFloat(producto['pesificado'].toFixed(2)) + ", y se le añaden $" + parseFloat(producto['impuestos'].toFixed(2))+ " en impuestos, dando un total de: $" + parseFloat(producto['preciosCimpuestos'].toFixed(2)) + ". El total en conjunto a el/los anteriores juegos es de: $" + parseFloat(producto['precioSumado'].toFixed(2)));
 
     memoria = sumatoria;
 
@@ -95,9 +97,12 @@ function sumarPrecios(){
         sumarJuego();
     
     }else{
-        alert("Realize la primer consulta");
-    
-        calcularPrecio();
+        
+        Swal.fire({
+            icon: "error",
+            title: "Realize la primer consulta",
+        });
+        //alert("Realize la primer consulta");
     }
 
 }
