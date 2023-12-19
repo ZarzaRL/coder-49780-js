@@ -26,11 +26,16 @@
       </nav>
       <main class="main-index">
         <div class="d-grid gap-2 col-6 mx-auto">
+            <h1 id="muestraUsuario" class="pRespuesta">No ha ingresado un nombre de usuario</h1>
+            <input placeholder="Ingrese el usuario" name="usuario" id="inputUsuario">
+            <button onclick="anadirUsuario()" class="btn btn-primary" type="button" >Ingresar</button>
+            
+          <br>
           <input placeholder="Ingresa el nombre" name="nombres" id="nombreJuego"/>
           <input placeholder="Ingrese el precio (USD)" name="precios" id="precioJuego"/>
           <button onclick="consultarPrecio()" class="btn btn-primary" type="button" >Consultar precio</button>
           <button onclick="sumarPrecios()" class="btn btn-primary" type="button">Sumar juego</button>
-          <div class="divRespuesta" id="darRespuesta"><p>Realize la primer consulta</p></div>
+          <p id="darRespuesta" class="pRespuesta">Realize la primer consulta</p></div>
         </div>
       </main>
       <footer class="foot">

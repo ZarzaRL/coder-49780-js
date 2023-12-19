@@ -1,9 +1,9 @@
 //Variables
     let memoria = 0;
 
+
 //funciones declaradas
 
-//funcion inicial
 
 function calcularPrecio()
 {
@@ -41,9 +41,6 @@ let producto = {
     return memoria;
 }
 
-
-
-//funcion sumadora
 
 function sumarJuego()
 {
@@ -108,6 +105,21 @@ function sumarPrecios(){
 }
 
 
+
+function anadirUsuario() {
+    const getUser = document.getElementById("inputUsuario").value;
+
+    localStorage.setItem("usuarioNombre", getUser);
+
+    if (localStorage.getItem("usuarioNombre") != ""){
+        document.getElementById("muestraUsuario").innerHTML ="Bienvenido: " + localStorage.getItem("usuarioNombre");
+    }
+}
+
+
+if (localStorage.getItem("usuarioNombre") != ""){
+    document.getElementById("muestraUsuario").innerHTML ="Bienvenido: " + localStorage.getItem("usuarioNombre");
+}
 
 
 
