@@ -41,3 +41,11 @@
 .pRespuesta{
     color: #66c0f4;
 }
+.btn-primary a{
+    text-decoration: none;
+    color: white;
+}
+.btn-primary a:hover{
+    text-decoration: none;
+    color: white;
+}
